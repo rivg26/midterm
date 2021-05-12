@@ -65,7 +65,26 @@
         echo "<h3 style='text-align:center;'>Verification Success</h3>";
       }
     }
+    
   ?>
+  <?php 
+    if(isset($_SESSION["useruid"])){
+      $user = $_SESSION["useruid"];
+    }else{
+      $user = "";
+    }
+    if( $user === "admin"){
+      echo "<form method ='post' action ='includes/downloadFiles.inc.php'>";
+      echo "<button type ='submit' name = 'download'> Download</button>";
+      echo "<button type ='submit' name = 'backup'> Backup</button>";
+      echo "</form>";
+    }
+    else{
+
+    }
+  
+  ?>
+  
 </section>
 
 <?php
